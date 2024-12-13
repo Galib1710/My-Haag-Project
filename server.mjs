@@ -10,7 +10,7 @@ import multer from 'multer';
 import fs from 'fs';
 
 const app = express();
-app.use(express.static('public'));
+app.use(express.static('dist'));
 app.use(express.json());
 
 // To resolve __dirname in ES modules
@@ -70,20 +70,20 @@ app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 
 // Endpoint to fetch homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'homepage.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'homepage.html'));
 });
 
 app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'signup.html'));
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Login.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'Login.html'));
 });
 
 // Serve the profile settings page
 app.get('/profile-settings', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'profile-settings.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'profile-settings.html'));
 });
 
 // API to check user status
@@ -237,7 +237,7 @@ app.get('/recipes', (req, res) => {
 
 // add recipes - page 
 app.get('/recipe/add', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'addRecipe.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'addRecipe.html'));
 });
 // add recipes - api
 app.post('/recipe/add', isAuthenticated, upload.single('image'), (req, res) => {
