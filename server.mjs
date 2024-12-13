@@ -70,7 +70,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 
 // Endpoint to fetch homepage
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'homepage.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'Homepage.html'));
 });
 
 app.get('/signup', (req, res) => {
