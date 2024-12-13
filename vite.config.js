@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Ensure output goes directly to dist
     rollupOptions: {
-      input: './public/homepage.html', // If homepage.html is your main entry
+      input: './Homepage.html', // If homepage.html is your main entry
     },
   },
   publicDir: 'public', // Ensures public files are copied to dist
