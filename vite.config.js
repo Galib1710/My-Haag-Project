@@ -4,11 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
- build: {
-    outDir: 'dist', // Ensure output goes directly to dist
+ root: '.', // The project root (optional but makes things clear)
+  build: {
+    outDir: 'dist', // Output directory
     rollupOptions: {
-      input: 'public/homepage.html', // Point to your homepage.html
+      input: 'public/Homepage.html', // Set the entry point to your homepage.html
     },
   },
-  publicDir: 'public', // Ensures public files are copied to dist
+  publicDir: 'public', // Ensures public files like homepage.html are copied to dist
 });
